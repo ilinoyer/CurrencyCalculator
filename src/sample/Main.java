@@ -19,6 +19,10 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+        CurrencyCollection collection = new CurrencyCollection();
+        ParseXML colletionCreator = new ParseXMLString(collection);
+        colletionCreator.CreateCurrencyCollection();
+        collection.showCollection();
 
 
     }

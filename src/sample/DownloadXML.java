@@ -1,10 +1,15 @@
 package sample;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import jdk.internal.org.xml.sax.InputSource;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.*;
 import java.net.URL;
+
+import static java.lang.System.exit;
 
 /**
  * Created by sojer on 13.10.2017.
@@ -18,13 +23,13 @@ public class DownloadXML {
          this.urlAddres = urlAddres;
      }
 
-     public String XMLToString()
+     public String GetXMLString()
      {
          URL url;
          InputStream is = null;
          BufferedReader br;
          String line;
-         String result = null;
+         String result = "";
 
          try {
              url = new URL(urlAddres);
@@ -45,4 +50,32 @@ public class DownloadXML {
          return result;
 
      }
+
+    public Document GetXMLDocument()
+    {
+        Document doc = null;
+        InputStream is = null;
+
+        try {
+
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            URL url = new URL(urlAddres);
+            is = url.openStream();
+            doc = db.parse(is);
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            exit(1);
+        }
+        finally {
+
+            try {
+                if (is != null) is.close();
+            } catch (IOException ioe) {}
+        }
+
+        return doc;
+    }
 }

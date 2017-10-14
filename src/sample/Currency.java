@@ -49,4 +49,14 @@ public class Currency {
     public void setRateOfExchange(double rateOfExchange) {
         this.rateOfExchange = rateOfExchange;
     }
+
+    @Override
+    public String toString() {
+        return "Currency{" +
+                "currencyName='" + currencyName + '\'' +
+                ", converter=" + converter +
+                ", code='" + code + '\'' +
+                ", rateOfExchange=" + rateOfExchange +
+                '}';
+    }
 }

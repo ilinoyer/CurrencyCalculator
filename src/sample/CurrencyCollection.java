@@ -22,4 +22,12 @@ public class CurrencyCollection {
     {
        return this.currencyList.size();
     }
+
+    public void showCollection()
+    {
+        for(int i = 0; i < currencyList.size(); ++i)
+        {
+            System.out.println(currencyList.get(i).toString());
+        }
+    }
 }
