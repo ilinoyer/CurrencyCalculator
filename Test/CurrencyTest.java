@@ -16,14 +16,14 @@ public class CurrencyTest {
     public void GetterTest()
     {
         Currency currency = new Currency("Złoty", 1,"PLN", 1.5);
-        assertEquals(1,currency.getConverter());
+        assertEquals(1,currency.GetConverter());
     }
 
     @Test
     public void SetterTest()
     {
         Currency currency = new Currency("Złoty", 1,"PLN", 1.5);
-        currency.setConverter(2);
-        assertNotEquals(1, currency.getConverter());
+        currency.SetConverter(2);
+        assertNotEquals(1, currency.GetConverter());
     }
 }

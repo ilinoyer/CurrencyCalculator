@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Created by sojer on 13.10.2017.
  */
-public class DonloadXMLTest {
+public class DownloadXMLTest {
 
     @Test
     public void CreatingObjectTest()

@@ -23,7 +23,27 @@ public class CurrencyCollection {
        return this.currencyList.size();
     }
 
-    public void showCollection()
+    public Currency GetCollectionElementByPosition(int position)
+    {
+        return currencyList.get(position);
+    }
+
+    public Currency GetCurrencyElementByCode(String code)
+    {
+        Currency result =  null;
+        for(int i = 0 ; i < currencyList.size(); ++i)
+        {
+            if( currencyList.get(i).GetCode().equals(code))
+            {
+                result  = currencyList.get(i);
+                break;
+            }
+        }
+
+        return result;
+    }
+
+    public void ShowCollection()
     {
         for(int i = 0; i < currencyList.size(); ++i)
         {

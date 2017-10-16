@@ -22,31 +22,31 @@ public class Currency {
         return currencyName;
     }
 
-    public void setCurrencyName(String currencyName) {
+    public void SetCurrencyName(String currencyName) {
         this.currencyName = currencyName;
     }
 
-    public int getConverter() {
+    public int GetConverter() {
         return converter;
     }
 
-    public void setConverter(int converter) {
+    public void SetConverter(int converter) {
         this.converter = converter;
     }
 
-    public String getCode() {
+    public String GetCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void SetCode(String code) {
         this.code = code;
     }
 
-    public double getRateOfExchange() {
+    public double GetRateOfExchange() {
         return rateOfExchange;
     }
 
-    public void setRateOfExchange(double rateOfExchange) {
+    public void SetRateOfExchange(double rateOfExchange) {
         this.rateOfExchange = rateOfExchange;
     }
 

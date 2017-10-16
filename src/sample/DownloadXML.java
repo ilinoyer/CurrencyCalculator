@@ -1,5 +1,12 @@
 package sample;
 
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
 import jdk.internal.org.xml.sax.InputSource;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -66,8 +73,12 @@ public class DownloadXML {
 
         }
         catch (Exception e) {
-            e.printStackTrace();
-            exit(1);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Wymagany internet! ", ButtonType.YES);
+            alert.showAndWait();
+
+            if (alert.getResult() == ButtonType.YES) {
+                exit(1);
+            }
         }
         finally {
 
